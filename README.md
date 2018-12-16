@@ -3,7 +3,7 @@
 
 ### This is a (prototype) website for court watch in Buffalo.
 
-Very condensed background information on the issue:
+### Very condensed background information on the issue:
 
 When people first go to court, they generally having their full hearing set for a later date.  To make sure people return to court, judges often set a monetary bail that the person must pay in order to go free until that hearing date.  There are two main problems here:  
 
