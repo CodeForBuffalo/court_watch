@@ -12,12 +12,4 @@ b) Judges do not take into account a person's wealth or income when setting bail
 
 For a detailed report on bail in Buffalo go here: https://ppgbuffalo.org/files/documents/criminal-justice/cruelty_and_cost_money_bail_in_buffalo.pdf
 
-### Website implementation questions to answer:
-
-1) Does it need to be integrated with an existing site?
-2) Does it need a login system for users?
-3) Google Calendar for court watch shifts?
-4) Way for people to submit historic personal stories?
-
-
 
