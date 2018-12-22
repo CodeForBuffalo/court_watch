@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+    {% block title %}
+    Stories
+    {% endblock %}
+{% block body %}
+
+         <!-- Title -->
+          <h1 class="mt-4">Initial Post</h1>
+
+          <!-- Author -->
+          <p class="lead">
+            from
+            <a href="https://ppgbuffalo.org/files/documents/criminal-justice/cruelty_and_cost_money_bail_in_buffalo.pdf">PPG Report on Bail</a>
+          </p>
+
+          <hr>
+
+          <!-- Date/Time -->
+          <p>Posted on January 1, 2018 at 12:00 PM</p>
+
+          <hr>
+
+          <hr>
+
+          <!-- Post Content -->
+          <p class="lead">Box 1. The Cost of a Judge’s Discretion
+The defendant was a 23-year-old black man, who was charged with misdemeanors
+including marijuana possession and trespass. At first, the judge decided that the defendant
+was eligible for the Release Under Supervision (RUS) program; he would not have to pay
+bail and would not be detained pretrial. The defendant then told the judge that he had
+been mistreated at the Erie County Holding Center the night before, while waiting for his
+arraignment. After the defendant was seated again, waiting for a RUS representative, he
+slouched in his chair with what the judge perceived as a negative attitude. The judge told
+him to sit up, and when he did not comply the judge called him back to the stand. The
+defendant complained again about his treatment at the Holding Center, and the judge
+stated, "If you're acting like this in front of me, I can only imagine what you were doing at
+the Holding Center." When the defendant protested, she continued, "If I want to put
+$100,000 bail on you for acting silly in here, I can do that." Apparently due to the judge's
+dislike of the young man's demeanor, bail was set for $5,000 cash or insurance bond. </p>
+
+          <hr>
+
+          <div>Developer note:  Each post could be stored in a database.  People who are logged in could enter a post in a form, to be sent to the database.  The posts will be drawn from the database.  Have some way of searching for posts/iterating through them chronologically.</div>
+
+{% endblock %}
