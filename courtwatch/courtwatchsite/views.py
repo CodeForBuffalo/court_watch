@@ -1,4 +1,6 @@
 from django.shortcuts import render, render_to_response
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 
@@ -21,11 +23,13 @@ def resources(request):
     return render(request, 'resources.html', context)
 
 def join(request):
-	return render_to_response('join.html')
+	return render(request, 'join.html', context)
 def contact(request):
-	return render_to_response('contact.html')
+	return render(request, 'contact.html', context)
 def login(request):
-	return render_to_response('login.html')
+	return render(request, 'login.html', context)
+
+@login_required
 def member(request):
-	return render_to_response('member.html')
+	return render(request, 'member.html', context)
 

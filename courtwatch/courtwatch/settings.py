@@ -127,3 +127,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '../member/'
+
+LOGIN_URL = 'login'
