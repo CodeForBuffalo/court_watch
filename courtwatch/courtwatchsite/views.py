@@ -1,5 +1,7 @@
 from django.shortcuts import render, render_to_response
 from django.contrib.auth.decorators import login_required
+from .forms import StoryForm
+from .models import Story
 
 
 # Create your views here.
@@ -12,6 +14,13 @@ def index(request):
 	return render(request, 'index.html', context)
 
 def stories(request):
+    obj = Story.objects.get(id=1)
+
+    context = {
+        'title': obj.title,
+        'text': obj.text
+    }
+
     return render(request, "stories.html", context)
 
 
@@ -31,5 +40,11 @@ def login(request):
 
 @login_required
 def member(request):
+	form = StoryForm(request.POST or None)
+	if form.is_valid():
+		form.save()
+	context = {
+		'form': form
+	}
 	return render(request, 'member.html', context)
 
