@@ -26,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # /stories/
     url(r'^stories/$', views.stories, name='stories'),
+    url(r'^stories/(?P<pk>\d+)/$', views.next, name='next'),
     # /statistics/
     url(r'^statistics/$', views.statistics, name='statistics'),
     # /resources/

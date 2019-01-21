@@ -14,12 +14,23 @@ def index(request):
 	return render(request, 'index.html', context)
 
 def stories(request):
-    obj = Story.objects.get(id=1)
+    obj = Story.objects.last()
 
     context = {
         'title': obj.title,
-        'text': obj.text
+        'text': obj.text,
+        'id': obj.id,
+        'last': last
     }
+
+    return render(request, "stories.html", context)
+
+def next(request, pk):
+    pk = int(pk)
+    n = pk - 1
+    obj = Story.objects.get(id=n)
+
+    context = {'title': obj.title, 'text': obj.text, 'id': n}
 
     return render(request, "stories.html", context)
 
