@@ -11,10 +11,10 @@
     {% load static %}
 
     <title>
-    Court Watch Buffalo -
-    {% block title %}
+        Court Watch Buffalo -
+        {% block title %}
 
-    {% endblock %}
+        {% endblock %}
     </title>
 
     <!-- Bootstrap core CSS -->
@@ -27,101 +27,97 @@
 
 
 <body>
-<br>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="{% url 'index' %}">Court Watch Buffalo</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'stories' %}">Stories</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'statistics' %}">Statistics</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'resources' %}">Resources</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-            </li>
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'index' %}">Court Watch Buffalo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'stories' %}">Stories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'statistics' %}">Statistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'resources' %}">Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    </li>
 
-            {% if user.is_authenticated %}
+                    {% if user.is_authenticated %}
 
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'member' %}">Member</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-            </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'member' %}">Member</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
 
-            {% else %}
+                    {% else %}
 
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'join' %}">Join</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'login' %}">Login</a>
-            </li>
-            {% endif %}
-          </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'join' %}">Join</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
-
-  </div>
 
     <!-- Page Content -->
     <div class="container">
+        <div class="row">
+            <!-- Post Content Column -->
+            <div class="col-lg-8">
+                <div class="py-4">
+                    {% block body %}
 
-      <div class="row">
-        <!-- Post Content Column -->
-        <div class="col-lg-8">
+                    {% endblock %}
+                </div>
+            </div>
 
-            {% block body %}
+            <!-- Sidebar Widgets Column -->
+            <div class="col-md-4">
 
-            {% endblock %}
+                <!-- Side Widget -->
+                <div class="card my-4">
+                    <a class="twitter-timeline" data-height="600" href="https://twitter.com/open_buffalo?ref_src=twsrc%5Etfw">Tweets by open_buffalo</a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+
+            </div>
+
         </div>
-
-<!-- Sidebar Widgets Column -->
-        <div class="col-md-4">
-
-          <!-- Side Widget -->
-          <div class="card my-4">
-               <a class="twitter-timeline" data-height="600" href="https://twitter.com/open_buffalo?ref_src=twsrc%5Etfw">Tweets by open_buffalo</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </div>
-
-        </div>
-
-      </div>
-      <!-- /.row -->
+        <!-- /.row -->
 
     </div>
     <!-- /.container -->
 
 </body>
-    <!-- Footer -->
-    <footer>
-      {% if user.is_authenticated %}
-      <div class="container">
+<!-- Footer -->
+<footer>
+    {% if user.is_authenticated %}
+    <div class="container">
         Logged in as {{ user.get_username }}.
-      </div>
-      {% else %}
-      <div class="container">
+    </div>
+    {% else %}
+    <div class="container">
         Not logged in.
-      </div>
-      {% endif %}
-      <!-- /.container -->
-    </footer>
+    </div>
+    {% endif %}
+    <!-- /.container -->
+</footer>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-
-  </body>
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
 </html>

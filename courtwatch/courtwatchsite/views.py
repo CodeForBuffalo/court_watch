@@ -20,7 +20,7 @@ def stories(request):
         'title': obj.title,
         'text': obj.text,
         'id': obj.id,
-        'last': last
+#        'last': last
     }
 
     return render(request, "stories.html", context)
@@ -38,14 +38,15 @@ def next(request, pk):
 def statistics(request):
     return render(request, 'statistics.html', context)
 
-
 def resources(request):
     return render(request, 'resources.html', context)
 
 def join(request):
 	return render(request, 'join.html', context)
+
 def contact(request):
 	return render(request, 'contact.html', context)
+
 def login(request):
 	return render(request, 'login.html', context)
 

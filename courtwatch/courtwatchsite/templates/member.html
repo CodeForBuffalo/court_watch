@@ -1,25 +1,23 @@
 {% extends 'base.html' %}
-    {% block title %}
-    Member
-    {% endblock %}
+{% block title %}
+Member
+{% endblock %}
 {% block body %}
+{% load crispy_forms_tags %}
 
-<h3>Loggied in as {{ user.get_username }}</h3>
-
-<br>
+<h1>Logged in as {{ user.get_username }}</h1>
 
 {% load static %}
-<h3><a href="{% static "ArraignmentDataForm2.docx" %}">Download the Arraignment Data Form</a></h3>
-
-<br>
-<h3>Submit a story</h3>
-
-<br>
-
-<form method='POST'> {% csrf_token%}
-	{{ form.as_p }}
-	<input type='submit' value='Save' />
-</form>
+<div class="mb-4">
+    <a href="{% static 'ArraignmentDataForm2.docx' %}">Download the Arraignment Data Form</a>
+</div>
+<div>
+    <h3>Submit a story</h3>
+    <form method="post"> {% csrf_token%}
+        {{ form|crispy }}
+        <input class="btn btn-primary" type='submit' value='Save' />
+    </form>
+</div>
 
 <br>
 
