@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 from secrets import *
 import os
 import django_heroku
-import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,9 +30,9 @@ STATICFILES_DIRS = (
 SECRET_KEY = '*)o-7*oj*n-j7^kx237d8l7+z5+y9icj6mhbln2%c42ja()cxy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -133,5 +132,3 @@ LOGIN_REDIRECT_URL = '../member/'
 LOGIN_URL = 'login'
 
 django_heroku.settings(locals())
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
